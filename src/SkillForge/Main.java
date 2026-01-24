@@ -8,7 +8,7 @@ public class Main {
     final public static Scanner userInputScanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int choice;
+        double result;
         double a = 0;
         double b = 0;
 
@@ -17,29 +17,57 @@ public class Main {
         while (true) {
 
             switch (menu()) {
-                case 1:
-                    add(a, b);
-                    break;
+                case 1: {
+                    double[] values = prompt();
+                    a = values[0];
+                    b = values[1];
 
-                case 2:
-                    sub(a, b);
+                    result = add(a, b);
+                    System.out.println("Result: " + a + " + " + b + " = " + result);
+                    System.out.println();
                     break;
+                }
 
-                case 3:
-                    multiply(a, b);
-                    break;
+                case 2: {
+                    double[] values = prompt();
+                    a = values[0];
+                    b = values[1];
 
-                case 4:
-                    divide(a, b);
+                    result = sub(a, b);
+                    System.out.println("Result: " + a + " - " + b + " = " + result);
+                    System.out.println();
                     break;
+                }
+
+                case 3: {
+                    double[] values = prompt();
+                    a = values[0];
+                    b = values[1];
+
+                    result = multiply(a, b);
+                    System.out.println("Result: " + a + " * " + b + " = " + result);
+                    System.out.println();
+                    break;
+                }
+
+                case 4: {
+                    try {
+                        double[] values = prompt();
+                        a = values[0];
+                        b = values[1];
+
+                        result = divide(a, b);
+                        System.out.println("Result: " + a + " / " + b + " = " + result);
+                        System.out.println();
+                    } catch (ArithmeticException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    System.out.println();
+                    break;
+                }
 
                 case 5:
                     multiplicationTable(a,b);
-                    break;
-
-                case 0:
-                    System.out.println("Thank you for using Simple Calculator!");
-                    System.exit(0);
                     break;
 
                 default:
@@ -50,9 +78,9 @@ public class Main {
 
 
     public static int menu() {
-        System.out.println("---------------------------");
+        System.out.println("-".repeat(27));
         System.out.println("# Calculator Menu");
-        System.out.println("---------------------------");
+        System.out.println("-".repeat(27));
         System.out.println("1. Add two numbers");
         System.out.println("2. Subtract two numbers");
         System.out.println("3. Multiply two numbers");
@@ -90,57 +118,24 @@ public class Main {
         return number;
     }
 
-    public static void add (double a, double b) {
-        System.out.println("Enter first number: ");
-        a = userInputScanner.nextDouble();
-        System.out.println("Enter second number: ");
-        b = userInputScanner.nextDouble();
-        double additionResult =  a + b;
-
-        System.out.println("Result: " + a + " + " + b + " = " + additionResult );
-        System.out.println();
-
+    public static double add (double a, double b) {
+        return a + b;
     }
 
-    public static void sub (double a, double b) {
-        System.out.println("Enter first number: ");
-        a = userInputScanner.nextDouble();
-        System.out.println("Enter second number: ");
-        b = userInputScanner.nextDouble();
-
-        double subtractionResult = a - b;
-
-        System.out.println("Result: " + a + " - " + b + " = " + subtractionResult );
-        System.out.println();
+    public static double sub (double a, double b) {
+        return a - b;
     }
 
-    public static void multiply (double a, double b) {
-        System.out.println("Enter first number: ");
-        a = userInputScanner.nextDouble();
-        System.out.println("Enter second number: ");
-        b = userInputScanner.nextDouble();
-
-        double multiplicationResult = a * b;
-
-        System.out.println("Result: " + a + " * " + b + " = " + multiplicationResult);
-        System.out.println();
+    public static double multiply (double a, double b) {
+        return a * b;
     }
 
-    public static void divide (double a, double b) {
-
-            System.out.println("Enter first number: ");
-            a = userInputScanner.nextDouble();
-            System.out.println("Enter second number: ");
-            b = userInputScanner.nextDouble();
-
+    public static double divide (double a, double b) {
             if (b == 0.0) {
-                throw new IllegalArgumentException("Divide by zero");
+                throw new IllegalArgumentException("Error, cannot divide by zero");
             }
 
-            double divideResult = a / b;
-
-            System.out.println("Result: " + a + " / " + b + " = " + divideResult);
-            System.out.println();
+            return a / b;
     }
 
     public static void multiplicationTable (double a, double b) {
@@ -154,6 +149,16 @@ public class Main {
             System.out.println(a + " x " + i + " = " + (a * i));
         }
 
+    }
+
+    public static double[] prompt() {
+        System.out.println("Enter first number: ");
+        double a = userInputScanner.nextDouble();
+
+        System.out.println("Enter second number: ");
+        double b = userInputScanner.nextDouble();
+
+        return new double[] {a, b};
     }
 
 
