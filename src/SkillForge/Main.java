@@ -1,83 +1,62 @@
 package SkillForge;
 
-import java.time.LocalTime;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     final public static Scanner userInputScanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        double result;
-        double a = 0;
-        double b = 0;
-
         System.out.println("Welcome to Simple Calculator!");
 
+        int choice = 0;
+
         while (true) {
+            menu();
+            choice = userInputScanner.nextInt();
 
-            switch (menu()) {
-                case 1: {
-                    double[] values = prompt();
-                    a = values[0];
-                    b = values[1];
-
-                    result = add(a, b);
-                    System.out.println("Result: " + a + " + " + b + " = " + result);
-                    System.out.println();
-                    break;
-                }
-
-                case 2: {
-                    double[] values = prompt();
-                    a = values[0];
-                    b = values[1];
-
-                    result = sub(a, b);
-                    System.out.println("Result: " + a + " - " + b + " = " + result);
-                    System.out.println();
-                    break;
-                }
-
-                case 3: {
-                    double[] values = prompt();
-                    a = values[0];
-                    b = values[1];
-
-                    result = multiply(a, b);
-                    System.out.println("Result: " + a + " * " + b + " = " + result);
-                    System.out.println();
-                    break;
-                }
-
-                case 4: {
-                    try {
-                        double[] values = prompt();
-                        a = values[0];
-                        b = values[1];
-
-                        result = divide(a, b);
-                        System.out.println("Result: " + a + " / " + b + " = " + result);
-                        System.out.println();
-                    } catch (ArithmeticException e) {
-                        System.out.println(e.getMessage());
-                    }
-                    System.out.println();
-                    break;
-                }
-
-                case 5:
-                    multiplicationTable(a,b);
-                    break;
-
-                default:
-                    System.out.println("Invalid entry, please try again");
+            if (choice == 0) {
+                System.out.println("Thanks for using Simple Calculator!");
+                userInputScanner.close();
+                break;
             }
+
+            performOperation(choice);
+        }
+    }
+
+    private static void performOperation(int choice) {
+        switch (choice) {
+            case 1: {
+               add();
+                break;
+            }
+
+            case 2: {
+               sub();
+                break;
+            }
+
+            case 3: {
+              divide();
+                break;
+            }
+
+            case 4: {
+                multiply();
+                break;
+            }
+
+            case 5:
+                multiplicationTable();
+                break;
+
+            default:
+                System.out.println("Invalid entry, please try again");
         }
     }
 
 
-    public static int menu() {
+    public static void menu() {
         System.out.println("-".repeat(27));
         System.out.println("# Calculator Menu");
         System.out.println("-".repeat(27));
@@ -86,63 +65,53 @@ public class Main {
         System.out.println("3. Multiply two numbers");
         System.out.println("4. Divide two numbers");
         System.out.println("5. Create multiplication table");
-        System.out.println("q. End your program");
+        System.out.println("0. End your program");
         System.out.print("> Enter your option: ");
 
-        return input();
-
     }
 
-    public static int input() {
-        int number = 0;
 
-        while (true) {
-            if (userInputScanner.hasNextInt()) {
-                number = Math.abs(userInputScanner.nextInt());
-                userInputScanner.nextLine();
-                if (number > 0) {
-                    break;
-                } else {
-                    System.out.println("Invalid entry, please try again");
-                }
-            } else if (userInputScanner.hasNext()) {
-                String inString = userInputScanner.nextLine();
-                if (inString.equalsIgnoreCase("q")) {
-                    number = 0;
-                    break;
-                } else {
-                    System.out.println("Invalid entry, please enter a number or 'q' to quit");
-                }
-            }
+    public static void add() {
+        double a = getUserInput("Enter first number: ");
+        double b = getUserInput("Enter second number: ");
+
+        double result = a + b;
+        System.out.printf("Result of : %.2f / %.2f = %.2f%n", a, b, result);
+    }
+
+    public static void sub() {
+        double a = getUserInput("Enter first number");
+        double b = getUserInput("Enter second number");
+
+        double result = a - b;
+        System.out.printf("Result of : %.2f / %.2f = %.2f%n", a, b, result);
+    }
+
+    public static void multiply() {
+        double a = getUserInput("Enter first number");
+        double b = getUserInput("Enter second number");
+
+        double result = a * b;
+        System.out.printf("Result of : %.2f / %.2f = %.2f%n", a, b, result);
+    }
+
+    public static void divide() {
+        double a = getUserInput("Enter first number");
+        double b = getUserInput("Enter second number");
+
+        if (b == 0.0) {
+            System.out.println("You cannot divide by zero");
+            return;
         }
-        return number;
+
+        double result = a / b;
+        System.out.printf("Result of : %.2f / %.2f = %.2f%n", a, b, result);
+
     }
 
-    public static double add (double a, double b) {
-        return a + b;
-    }
-
-    public static double sub (double a, double b) {
-        return a - b;
-    }
-
-    public static double multiply (double a, double b) {
-        return a * b;
-    }
-
-    public static double divide (double a, double b) {
-            if (b == 0.0) {
-                throw new IllegalArgumentException("Error, cannot divide by zero");
-            }
-
-            return a / b;
-    }
-
-    public static void multiplicationTable (double a, double b) {
-        System.out.print("Enter a number to multiply: ");
-        a = userInputScanner.nextInt();
-        System.out.print("Enter number of rows: ");
-        b = userInputScanner.nextInt();
+    public static void multiplicationTable() {
+        double a = getUserInput("Enter a number to multiply: ");
+        double b = getUserInput("Enter number of rows: ");
 
         System.out.println("\nMultiplication Table for " + a + ":");
         for (int i = 1; i <= b; i++) {
@@ -151,16 +120,14 @@ public class Main {
 
     }
 
-    public static double[] prompt() {
-        System.out.println("Enter first number: ");
-        double a = userInputScanner.nextDouble();
-
-        System.out.println("Enter second number: ");
-        double b = userInputScanner.nextDouble();
-
-        return new double[] {a, b};
+    public static double getUserInput(String prompt) {
+        System.out.println(prompt);
+        while (!userInputScanner.hasNextDouble()) {
+            System.out.println("Invalid input, enter a number");
+            userInputScanner.next();
+        }
+        return userInputScanner.nextDouble();
     }
-
 
 
 }
