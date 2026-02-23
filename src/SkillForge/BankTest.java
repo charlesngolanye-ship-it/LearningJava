@@ -1,3 +1,5 @@
+package SkillForge;
+
 public class BankTest {
     public static void main(String[] args) {
         CheckingAccount checkingAccount = new CheckingAccount("Charles", 11, 230.0, 10.0, 5.0);

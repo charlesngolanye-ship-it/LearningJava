@@ -1,3 +1,5 @@
+package SkillForge;
+
 public class CheckingAccount extends BankAccount {
     private double overdraftAmount;
     private double overdraftFee;

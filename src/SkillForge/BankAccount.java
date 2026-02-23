@@ -1,3 +1,5 @@
+package SkillForge;
+
 public class BankAccount {
     private final String name;
     private final int accountNumber;
