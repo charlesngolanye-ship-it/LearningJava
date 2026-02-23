@@ -4,143 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f548013e-a69b-4760-a4b3-d4d4f320203a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelloWorld.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Browser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Inheritance/CheckBox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Inheritance/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Inheritance/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Inheritance/Main2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Inheritance/NotificationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Inheritance/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Inheritance/TextBox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Inheritance/UIControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Inheritance/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Inheritance/Video.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Inheritance/VideoDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Inheritance/VideoEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Inheritance/VideoProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Inheritance/XVideoEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InheritancePolymorphismInterface/CreditCardPayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InheritancePolymorphismInterface/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InheritancePolymorphismInterface/PayPalPayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InheritancePolymorphismInterface/Payment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InheritancePolymorphismInterface/Refundable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/TaxCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/TaxCalculator2018.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/TaxCalculator2019.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/TaxReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyTubeVideoProject/DBStorage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyTubeVideoProject/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyTubeVideoProject/Encoding.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyTubeVideoProject/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyTubeVideoProject/NotificationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyTubeVideoProject/SqlVideoDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyTubeVideoProject/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyTubeVideoProject/Video.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyTubeVideoProject/VideoDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyTubeVideoProject/VideoEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyTubeVideoProject/VideoProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PhoneBillCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RefactoringMortgage/Console.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RefactoringMortgage/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RefactoringMortgage/MortgageCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RefactoringMortgage/MortgageReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SkillForge/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TextBox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/Apple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/Ass3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/Ass4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/Banana.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/BillCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/BillPrinter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/CalculatePhoneBill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/Console.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/Duck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/Farm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/Fruit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/Main2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/Main3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/MandatoryAssignment1DiceGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/MandatoryAssignment2RandomNumbers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/Password.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/PasswordValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/Pig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/PracticeAssignment2Calculations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/angie/PracticeExam1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/collections/CollectionsDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/collections/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/collections/EmailComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/collections/ListDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/collections/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/collections/MapDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/collections/QueueDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/collections/SetDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptions/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptions/AccountException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptions/ExceptionsDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptions/InsufficientFundsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptions/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generics/GenericList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generics/Instructor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generics/KeyValuePair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generics/List.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generics/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generics/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generics/UserList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generics/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ltu/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ltu/DateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ltu/Exam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ltu/LTUAirport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ltu/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ltu/PE1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ltu/PE2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ltu/ParkingCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ltu/ParkingLot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ltu/dto/CheckInCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ltu/dto/CheckInResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ltu/dto/CheckOutCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ltu/dto/CheckOutResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ltu/dto/ParkingStatusResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part1/BirthdayCake.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part1/Cake.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part1/Console.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part1/FizzBuzz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part1/Inheritance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part1/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part1/MortgageCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part1/MortgageReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part1/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part1/TasteTester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part1/WeddingCake.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part2/Document.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part2/DocumentDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part2/DocumentEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part2/DocumentProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part2/DocumentReviewer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part2/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part2/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part2/Main2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part2/NotificationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part2/SqlDocumentDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part2/TaxCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part2/TaxCalculator2018.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part2/TaxCalculator2019.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part2/TaxReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part2/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part2/XDocumentEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/part2/XDocumentReviewer.java" afterDir="false" />
+    <list default="true" id="f548013e-a69b-4760-a4b3-d4d4f320203a" name="Changes" comment="Project 3 - Bank Account System">
+      <change afterPath="$PROJECT_DIR$/src/Inheritance/BasePlusCommissionEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Inheritance/CommissionEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Inheritance/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Inheritance/HourlyEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Inheritance/PayrollSystemTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Inheritance/SalariedEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SavingsAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BankTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BankTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Browser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Browser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inheritance/CheckBox.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inheritance/EmailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inheritance/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inheritance/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inheritance/Main2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inheritance/Point.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inheritance/SqlVideoDatabase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,6 +39,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;charlesngolanye-ship-it&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/charlesngolanye-ship-it/LearningJava.git&quot;,
+    &quot;accountId&quot;: &quot;3e0e3594-287b-4842-836d-fc0a678a728a&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -170,8 +66,11 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.ArrayTricks.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Arrays.executor&quot;: &quot;Debug&quot;,
     &quot;Application.Ass3.executor&quot;: &quot;Run&quot;,
     &quot;Application.Ass4.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BankTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BasePlusCommissionEmployeeTest.executor&quot;: &quot;Run&quot;,
     &quot;Application.Chapter1.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.Exam.executor&quot;: &quot;Run&quot;,
     &quot;Application.Farm.executor&quot;: &quot;Run&quot;,
@@ -192,6 +91,7 @@
     &quot;Application.PE1.executor&quot;: &quot;Run&quot;,
     &quot;Application.PE2.executor&quot;: &quot;Run&quot;,
     &quot;Application.PasswordValidator.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PayrollSystemTest.executor&quot;: &quot;Run&quot;,
     &quot;Application.PracticeExam1.executor&quot;: &quot;Run&quot;,
     &quot;Application.ProjectPaymentSchedule.executor&quot;: &quot;Debug&quot;,
     &quot;Application.RefactoringMortgage.Main.executor&quot;: &quot;Run&quot;,
@@ -237,16 +137,23 @@
       <recent name="Inheritance" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SkillForge.Main">
-    <configuration name="Exam" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ltu.Exam" />
+  <component name="RunManager" selected="Application.BankTest">
+    <configuration name="Arrays" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SkillForge.Arrays" />
       <module name="HelloWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ltu.*" />
+          <option name="PATTERN" value="SkillForge.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BankTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BankTest" />
+      <module name="HelloWorld" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -264,25 +171,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ltu.Main" />
+    <configuration name="PayrollSystemTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Inheritance.PayrollSystemTest" />
       <module name="HelloWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ltu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PE1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ltu.PE1" />
-      <module name="HelloWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ltu.*" />
+          <option name="PATTERN" value="Inheritance.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -305,19 +199,19 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SkillForge.Main" />
+        <item itemvalue="Application.BankTest" />
+        <item itemvalue="Application.PayrollSystemTest" />
         <item itemvalue="Application.Inheritance.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.PE1" />
-        <item itemvalue="Application.Exam" />
+        <item itemvalue="Application.Arrays" />
+        <item itemvalue="Application.SkillForge.Main" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.28774.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.28774.11" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.29188.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.29188.11" />
       </set>
     </attachedChunks>
   </component>
@@ -461,12 +355,63 @@
       <workItem from="1768831487440" duration="4596000" />
       <workItem from="1768884769072" duration="4918000" />
       <workItem from="1768914959150" duration="6537000" />
-      <workItem from="1768967200987" duration="1568000" />
+      <workItem from="1768967200987" duration="3224000" />
+      <workItem from="1769055906986" duration="6997000" />
+      <workItem from="1769139392572" duration="468000" />
+      <workItem from="1769196351971" duration="599000" />
+      <workItem from="1769235509524" duration="4776000" />
+      <workItem from="1769323077543" duration="9323000" />
+      <workItem from="1769399440043" duration="3982000" />
+      <workItem from="1769489047619" duration="4525000" />
+      <workItem from="1769572019289" duration="3506000" />
+      <workItem from="1769575588010" duration="1877000" />
+      <workItem from="1769582863587" duration="617000" />
+      <workItem from="1769664481696" duration="4463000" />
+      <workItem from="1769693843840" duration="1880000" />
+      <workItem from="1770148845207" duration="2666000" />
+      <workItem from="1770235246551" duration="698000" />
+      <workItem from="1770320183651" duration="4733000" />
+      <workItem from="1770385933842" duration="5968000" />
+      <workItem from="1770497686619" duration="2789000" />
+      <workItem from="1770580609638" duration="7143000" />
+      <workItem from="1770666692605" duration="3547000" />
+      <workItem from="1771015679870" duration="2357000" />
+      <workItem from="1771239259693" duration="813000" />
+      <workItem from="1771491647236" duration="1357000" />
+      <workItem from="1771532770227" duration="417000" />
+      <workItem from="1771706701279" duration="6932000" />
+      <workItem from="1771770526359" duration="3416000" />
+      <workItem from="1771788697184" duration="5704000" />
+      <workItem from="1771850277105" duration="428000" />
     </task>
+    <task id="LOCAL-00001" summary="Project 3 - Bank Account System">
+      <option name="closed" value="true" />
+      <created>1771850376289</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1771850376289</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Project 3 - Bank Account System" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project 3 - Bank Account System" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -12,7 +12,7 @@ public class BankTest {
             currentBankAccount.deposit(100.0);
             currentBankAccount.withdraw(100.0);
         }
-        ;
+
 
     }
 }
