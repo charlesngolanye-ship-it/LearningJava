@@ -31,7 +31,7 @@ public class BankAccount {
 
    @Override
    public String toString() {
-        return String.format("Account name:%s%nAccount number:%d%nBalance: %.2f", getName(), getAccountNumber(), getBalance());
+        return String.format("Account name: %s%nAccount number: %d%nBalance: %.2f",getName(), getAccountNumber(), getBalance());
    }
 
     public void deposit(double amount) {

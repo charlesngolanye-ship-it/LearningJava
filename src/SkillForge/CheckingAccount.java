@@ -28,19 +28,26 @@ public class CheckingAccount extends BankAccount {
 
     @Override
     public String toString() {
-        return super.toString();
+        return String.format("Checking Account:\n %n%s %.2f%n %s %.2f%n %s", "Overdraft Fee:",
+                getOverdraftFee(),
+                "Overdraft Amount",getOverdraftAmount(),
+                super.toString());
     }
 
-    @Override
-    public void deposit(double amount) {
-        super.deposit(amount);
-    }
 
     @Override
     public void withdraw(double amount) {
-        if (amount > (getBalance() + getOverdraftAmount())) {
-            throw new IllegalArgumentException("Amount must be less than balance and overdraft amount.");
+        if (amount <= getBalance()) {
+            super.withdraw(amount);
+        } else if ( amount <= getBalance() - amount -overdraftFee) {
+            setBalance(getBalance() - amount -overdraftFee);
         }
-        super.withdraw(amount);
+        else  {
+            throw new IllegalArgumentException(" Amount exceeds overdraft limit.");
+        }
     }
 }
+
+/**
+ * balance here should deduct overdraft amount + overdraft fee
+ */
