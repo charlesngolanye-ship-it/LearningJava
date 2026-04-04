@@ -1,0 +1,83 @@
+package CapstoneProjects.TaskManagerCLI;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+
+public class Task {
+    private static int idCounter = 1; // shared across ALL tasks. Check if I restart program idCounter resets to 1 which may crash the program
+
+    private final int id;
+    private String title;
+    private String description;
+    private Priority priority;
+    private Status status;
+    private LocalDate dueDate;
+    private LocalDateTime createdAt;
+
+
+    public Task(String title, String description, Priority priority, Status status,
+                LocalDate dueDate, LocalDateTime createdAt) {
+
+        this.id = idCounter++; // assign then increment. Give current value, then increment for the next Task. 1->2 ->3...
+        this.title = title;
+        this.description = description;
+        this.priority = priority;
+        this.status = status;
+        this.dueDate = dueDate;
+        this.createdAt = createdAt;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Priority getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Priority priority) {
+        this.priority = priority;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+}
