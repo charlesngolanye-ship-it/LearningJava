@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 
 public class Task {
-    private static int idCounter = 1; // shared across ALL tasks. Check if I restart program idCounter resets to 1 which may crash the program
+    private static int idCounter = 1; // shared across ALL tasks.
 
     private final int id;
     private String title;
@@ -26,6 +26,21 @@ public class Task {
         this.status = status;
         this.dueDate = dueDate;
         this.createdAt = createdAt;
+    }
+
+    public Task(int id, String title, String description, Priority priority,
+                Status status, LocalDate dueDate, LocalDateTime createdAt) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.priority = priority;
+        this.status = status;
+        this.dueDate = dueDate;
+        this.createdAt = createdAt;
+
+        if (id >= idCounter) {
+            idCounter = id + 1;
+        }
     }
 
 
@@ -81,3 +96,8 @@ public class Task {
         this.createdAt = createdAt;
     }
 }
+/**
+ * Two constructors
+ * New task from user - no id -> auto-generated
+ * Lood from CSV - use existing id
+ */
