@@ -1,7 +1,5 @@
 package CapstoneProjects.TaskManagerCLI;
 
-
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.nio.file.Files;
@@ -31,7 +29,7 @@ public class TaskRepository{
                     firstLine = false; // Skip the header row
                     continue;
                 }
-                String[] parts = line.split(",");
+                String[] parts = line.split(",", -1); // prevents issues with empty values
 
                 String createdAtStr = parts[6].trim();
 
@@ -88,6 +86,7 @@ public class TaskRepository{
 
 /**
  * Repository does NOT decide anything, it just reads and writes
- *
- *
+ * read -> loadTasks()
+ * write -> saveTasks()
+ *TaskService decides when to call saveTasks()
  */
