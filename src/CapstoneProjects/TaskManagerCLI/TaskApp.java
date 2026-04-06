@@ -21,8 +21,8 @@ public class TaskApp {
                     System.out.println("Description");
                     String description = scanner.nextLine();
 
-                    System.out.println("Priority (HIGH, MEDIUM, LOW:");
-                    Priority priority = Priority.valueOf(scanner.nextLine().toUpperCase());
+                    System.out.println("Priority (HIGH, MEDIUM, LOW:)");
+                    Priority priority = Priority.valueOf(scanner.nextLine().toUpperCase()); // how does this method work? user enters high, valueOf looks up the constant by its name
 
                     System.out.println("Due date (yyyy-MM-dd):");
                     LocalDate dueDate = LocalDate.parse(scanner.nextLine());
@@ -31,7 +31,26 @@ public class TaskApp {
                     break;
 
                 case 2:
+                    System.out.println("List of Tasks");
+                    System.out.println("=============");
                     service.listTasks();
+
+                    System.out.println("TODO");
+                    System.out.println("====");
+                    service.listByStatus(Status.TODO);// not sure
+
+                    System.out.println("IN_PROGRESS");
+                    System.out.println("===========");
+                    service.listByStatus(Status.IN_PROGRESS);
+
+                    System.out.println("DONE");
+                    System.out.println("====");
+                    service.listByStatus(Status.DONE);
+
+                    System.out.println("Sorted by Due Date");
+                    System.out.println("==================");
+                    service.sortByDueDate();
+
                     break;
 
                 case 3:
@@ -63,9 +82,19 @@ public class TaskApp {
     }
 }
 /**
- * Task - Data only -> the object
- * TaskRepository - File read/ write -> storage
+ * Task - Data only -> the object.
+ * Model defines how data looks like..e.g Task has some fields etc
+ *
+ * TaskRepository - File read/ write -> storage.
+ * Handles data storage and retrieval. Responsible for saving data and reading it back from wherever it is stored, such as CSV file or dB
+ * Hides storage details
+ *
  * TaskService - Logic + rules -> brain
+ * Contains the app logic
+ * Controls what actions happen when users interact with the system, eg adding or updating data
+ * Uses repository to store or retrieve data but focuses only on the rules and behavior of application
+ *
  * TaskApp - User interaction -> Controller. Will have the main method
+ *
  * Simplifying whole project into one sentence -> You are managing a List<Task> in memory, and saving/loading it from a CSV file.
  */

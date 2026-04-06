@@ -99,5 +99,5 @@ public class Task {
 /**
  * Two constructors
  * New task from user - no id -> auto-generated
- * Lood from CSV - use existing id
+ * Load from CSV - use existing id
  */

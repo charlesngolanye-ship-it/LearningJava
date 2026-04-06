@@ -11,7 +11,7 @@ public class TaskService {
     private List<Task> tasks;
 
     public TaskService() {
-        tasks = taskRepository.loadTasks();
+        tasks = taskRepository.loadTasks(); // loads existing tasks
     }
 
     public void addTask(String title, String description, Priority priority, LocalDate dueDate){
@@ -24,18 +24,34 @@ public class TaskService {
                 LocalDateTime.now()
         );
 
-        tasks.add(task);
-        taskRepository.saveTasks(tasks);
+        tasks.add(task);// add it to your in-memory list
+        taskRepository.saveTasks(tasks); // persist everything to CSV
     }
 
+    // Find task by ID -> delete it -> save changes
     public void deleteTask(int id) {
-        boolean removed = tasks.removeIf(t -> t.getId() == id);
+       boolean removed = false;
 
-        if(!removed) {
-            System.out.println("Task not found.");
-        }
+       for (int i = 0; i < tasks.size(); i++) {
+           if (tasks.get(i).getId() == id) {
+               tasks.remove(i);
+               removed = true;
+               break; // stop after finding one
+           }
+       }
+       if (!removed) {
+           System.out.println("Task not found");
+       }
 
         taskRepository.saveTasks(tasks);
+
+       /*
+       for (Task t : tasks) {
+    if (t.getId() == id) {
+        tasks.remove(t); // 💥 ConcurrentModificationException risk
+    }
+}
+        */
     }
 
     public void updateTasksStatus(int id, Status newStatus) {
@@ -47,6 +63,8 @@ public class TaskService {
                 if (task.getStatus() == Status.TODO && newStatus == Status.DONE) {
                     System.out.println("Cannot skip IN_PROGRESS");
                     return;
+                    // Instead of returning make it a while loop so that user has to enter the right status
+                    // Handle IllegalArgumentException errors of value.Of is not found...
                 }
 
                 task.setStatus(newStatus);
@@ -60,6 +78,7 @@ public class TaskService {
     public void listTasks() {
         System.out.printf("%-5s %-15s %-10s %-12s %-10s%n",
                 "ID", "Title", "Priority", "Status", "DueDate");
+        System.out.println("---------------------------------------------------------");
 
         for (Task task : tasks) {
             System.out.printf("%-5s %-15s %-10s %-12s %-10s%n",
@@ -73,14 +92,45 @@ public class TaskService {
 
     public void listByStatus(Status status) {
 
+        for (Task t : tasks) {
+            if (t.getStatus() == status) {
+                System.out.println(t.getTitle());
+            }
+        }
+
+        /*
+        // Turn list into a stream pipeline
         tasks.stream()
                 .filter(t -> t.getStatus() == status)
                 .forEach(t -> System.out.println(t.getTitle()));
+
+         */
     }
 
     public void sortByDueDate() {
+        // Bubble Sort
+        for (int i = 0; i < tasks.size() - 1; i++) {
+            for (int j = 0; j < tasks.size() - i - 1; j++) {
+                LocalDate d1 = tasks.get(j).getDueDate();
+                LocalDate d2 = tasks.get(j + 1).getDueDate();
+
+                if (d1.isAfter(d2)) {
+                    Task temp = tasks.get(j);
+                    tasks.set(j, tasks.get(j + 1));
+                    tasks.set(j + 1, temp);
+                }
+            }
+        }
+
+        /*
         tasks.sort(Comparator.comparing(Task::getDueDate));
+
+         */
     }
+
+
+    // shouldn't this be able to list tasks then output them by due date? it seems list task is outputting tasks by due date
+
 
     public void printSummary() {
         System.out.println("===SUMMARY===");
@@ -100,30 +150,7 @@ public class TaskService {
     }
 }
 /**
- * these should all be methods under Task?? or under TaskService??...what is difference between TaskRepository vs TaskService?
- * Should below (Add task, List tasks, Update task, Delete task) be their own methods under TaskService?
- * Maybe not all of them, list task seems handled within TaskRepository
- *
- * TaskService.java — validates input, applies business rules (e.g. cannot move directly from TODO to DONE), delegates storage to the repository
- * Validates input - when adding tasks etc, how do I apply business rules? how do i delegate storage to repository?
- *
- * Add task — prompt for title, description, priority, and due date (parse from yyyy-MM-dd string)....not sure how to connect Add task to TaskRepository..where task is added automatically
- * At the moment I just have a sample csv file with an hand-coded task..Files.writeString(csvPath....)...Task Service calls TaskRepository, that is the answer.
- *
- * List tasks — display all tasks in a table; support filtering by status and sorting by due date or priority
- * I think filtering by status is done, what is remains is finding out how to sort by due date or priority
- *
- * Update task — change status (move a task from TODO to IN_PROGRESS to DONE)...have another method ...updateTasks in TaskRepository after the loadTasks method
- * In this method find out how to update files...maybe read more in io
- *
- * Delete task — remove by ID..have another method ...deleteTasks in TaskRepository after the updateTasks method
- * In this method find out how to delete by id
- *
- * Summary — print how many tasks exist per status and how many are overdue (due date is in the past and status is not DONE)
- * I think this is partly done under List tasks above...
- * Go further and print how many tasks are overdue
- *
- *
- * In general, should I read more about collections? List.add etc, it seems that tasks are just a list, then see how to manipulate that list!!
+
+ * Flow: App starts, TaskService is created, it calls: repo.loadTasks(), CSV converted into List<Task>, Stored in memory (tasks)
  */
 
