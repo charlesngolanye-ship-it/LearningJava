@@ -28,6 +28,7 @@ public class Task {
         this.createdAt = createdAt;
     }
 
+//    If I restart program idCounter resets to 1, to avoid, it I have a second constructor - though not the case when I test it
     public Task(int id, String title, String description, Priority priority,
                 Status status, LocalDate dueDate, LocalDateTime createdAt) {
         this.id = id;

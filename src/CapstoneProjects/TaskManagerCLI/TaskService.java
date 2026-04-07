@@ -7,11 +7,11 @@ import java.util.List;
 
 
 public class TaskService {
-    private TaskRepository taskRepository = new TaskRepository();
-    private List<Task> tasks;
+    private TaskRepository taskRepository = new TaskRepository(); // inject in constructor - dependency injection
+    private List<Task> tasks; // working memory where all current tasks are written
 
     public TaskService() {
-        tasks = taskRepository.loadTasks(); // loads existing tasks
+        tasks = taskRepository.loadTasks(); // loads existing tasks -> Go to the CSV file, bring all tasks, and put them on the list
     }
 
     public void addTask(String title, String description, Priority priority, LocalDate dueDate){
@@ -25,7 +25,10 @@ public class TaskService {
         );
 
         tasks.add(task);// add it to your in-memory list
-        taskRepository.saveTasks(tasks); // persist everything to CSV
+        taskRepository.saveTasks(tasks); // persist everything to CSV -> take everything on the list and rewrite the file
+        // On startup: CSV file -> loadTasks() -> List<Task> (memory)
+        // During runtime: List<Task> -> modified (add/delete/update)
+        // On save: List<Task> -> saveTasks() -> CSV file overwritten
     }
 
     // Find task by ID -> delete it -> save changes
@@ -58,6 +61,13 @@ public class TaskService {
 
         for (Task task : tasks){
             if (task.getId() == id) {
+//                Status newStatus = null;
+//
+//                while (true) {
+//                    try {
+//                        newStatus = Status.valueOf()
+//                    }
+//                }
 
                 // business rule
                 if (task.getStatus() == Status.TODO && newStatus == Status.DONE) {

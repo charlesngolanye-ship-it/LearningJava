@@ -2,6 +2,7 @@ package CapstoneProjects.TaskManagerCLI;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
@@ -13,7 +14,7 @@ public class TaskRepository{
 
     private static final Path FILE_PATH = Path.of("tasks.csv");
 
-    public List<Task> loadTasks() { // tripped by this method that takes a list
+    public List<Task> loadTasks() {
         List<Task> tasks = new ArrayList<>();
 
         if (!Files.exists(FILE_PATH)) {
@@ -31,32 +32,34 @@ public class TaskRepository{
                 }
                 String[] parts = line.split(",", -1); // prevents issues with empty values
 
-                String createdAtStr = parts[6].trim();
+//                String createdAtStr = parts[6].trim();
 
-                LocalDateTime createdAt;
-                if (createdAtStr.length() == 10) {
-                    createdAt = LocalDate.parse(createdAtStr).atStartOfDay();
-                } else {
-                    createdAt = LocalDateTime.parse(createdAtStr);
-                }
+//                LocalDateTime createdAt;
+//                if (createdAtStr.length() == 10) {
+//                    createdAt = LocalDate.parse(createdAtStr).atStartOfDay();
+//                } else {
+//                    createdAt = LocalDateTime.parse(createdAtStr);
+//                }
 
                 Task task = new Task(
+                        //Integer.parseInt(parts[0].trim()),
                         parts[1].trim(),
                         parts[2].trim(),
                         Priority.valueOf(parts[3].trim()),
                         Status.valueOf(parts[4].trim()),
                         LocalDate.parse(parts[5].trim()),
-                        createdAt
+                        LocalDateTime.parse((parts[6].trim()))
 
                 );
                 tasks.add(task);
 
             }
-        }
-        catch (Exception e) {
-            throw new RuntimeException(e); // not sure about the error type
-        }
         return tasks;
+        }
+        catch (IOException e) {
+            System.out.println(e.getMessage());
+            return new ArrayList<>();
+        }
 
     }
 
@@ -89,4 +92,10 @@ public class TaskRepository{
  * read -> loadTasks()
  * write -> saveTasks()
  *TaskService decides when to call saveTasks()
+ *
+ * eg user repository helping perform crud services w dB
+ * Controller - http requests end points
+ * Service - business logic
+ * Repository - interface helps interact w DB
+ *
  */

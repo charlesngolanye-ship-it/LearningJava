@@ -1,6 +1,8 @@
 package CapstoneProjects.TaskManagerCLI;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class TaskApp {
@@ -22,10 +24,11 @@ public class TaskApp {
                     String description = scanner.nextLine();
 
                     System.out.println("Priority (HIGH, MEDIUM, LOW:)");
-                    Priority priority = Priority.valueOf(scanner.nextLine().toUpperCase()); // how does this method work? user enters high, valueOf looks up the constant by its name
+                    Priority priority = Priority.valueOf(scanner.nextLine().toUpperCase()); // how does this method work? user enters high, valueOf looks up the constant by its name...converting the string into an enum
 
                     System.out.println("Due date (yyyy-MM-dd):");
                     LocalDate dueDate = LocalDate.parse(scanner.nextLine());
+
 
                     service.addTask(title, description, priority, dueDate);
                     break;
@@ -50,6 +53,7 @@ public class TaskApp {
                     System.out.println("Sorted by Due Date");
                     System.out.println("==================");
                     service.sortByDueDate();
+                    service.listTasks();
 
                     break;
 
@@ -76,6 +80,7 @@ public class TaskApp {
 
                 case 6:
                     return;
+                    //Since we are inside main, return means Exit the main method..and when main ends the program terminates automatically.
 
             }
         }
