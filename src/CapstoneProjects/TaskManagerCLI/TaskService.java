@@ -7,8 +7,8 @@ import java.util.List;
 
 
 public class TaskService {
-    private TaskRepository taskRepository = new TaskRepository(); // inject in constructor - dependency injection
-    private List<Task> tasks; // working memory where all current tasks are written
+    private final TaskRepository taskRepository = new TaskRepository();
+    private final List<Task> tasks; // working memory where all current tasks are written
 
     public TaskService() {
         tasks = taskRepository.loadTasks(); // loads existing tasks -> Go to the CSV file, bring all tasks, and put them on the list
@@ -57,35 +57,26 @@ public class TaskService {
         */
     }
 
-    public void updateTasksStatus(int id, Status newStatus) {
+    public UpdateResult updateTasksStatus(int id, Status newStatus) {
 
         for (Task task : tasks){
             if (task.getId() == id) {
-//                Status newStatus = null;
-//
-//                while (true) {
-//                    try {
-//                        newStatus = Status.valueOf()
-//                    }
-//                }
 
-                // business rule
                 if (task.getStatus() == Status.TODO && newStatus == Status.DONE) {
-                    System.out.println("Cannot skip IN_PROGRESS");
-                    return;
-                    // Instead of returning make it a while loop so that user has to enter the right status
-                    // Handle IllegalArgumentException errors of value.Of is not found...
-                }
+                    return UpdateResult.INVALID_TRANSITION;
 
+                }
                 task.setStatus(newStatus);
                 taskRepository.saveTasks(tasks);
-                return;
+                return UpdateResult.SUCCESS;
             }
         }
-        System.out.println("Task not found");
+        return UpdateResult.NOT_FOUND;
     }
 
     public void listTasks() {
+        System.out.println("List of Tasks");
+        System.out.println("=============");
         System.out.printf("%-5s %-15s %-10s %-12s %-10s%n",
                 "ID", "Title", "Priority", "Status", "DueDate");
         System.out.println("---------------------------------------------------------");

@@ -18,7 +18,7 @@ public class TaskRepository{
         List<Task> tasks = new ArrayList<>();
 
         if (!Files.exists(FILE_PATH)) {
-            return tasks; // first run
+            return tasks; // returns empty list if file does not exist
         }
 
         try (BufferedReader reader = Files.newBufferedReader(FILE_PATH)) {
@@ -32,17 +32,9 @@ public class TaskRepository{
                 }
                 String[] parts = line.split(",", -1); // prevents issues with empty values
 
-//                String createdAtStr = parts[6].trim();
-
-//                LocalDateTime createdAt;
-//                if (createdAtStr.length() == 10) {
-//                    createdAt = LocalDate.parse(createdAtStr).atStartOfDay();
-//                } else {
-//                    createdAt = LocalDateTime.parse(createdAtStr);
-//                }
 
                 Task task = new Task(
-                        //Integer.parseInt(parts[0].trim()),
+                        Integer.parseInt(parts[0].trim()),
                         parts[1].trim(),
                         parts[2].trim(),
                         Priority.valueOf(parts[3].trim()),
@@ -81,8 +73,8 @@ public class TaskRepository{
                 writer.newLine();
             }
 
-        } catch (Exception e) {
-            throw new RuntimeException("Error saving tasks", e);
+        } catch (IOException e) {
+            System.out.println("Failed saving tasks");
         }
     }
 }
